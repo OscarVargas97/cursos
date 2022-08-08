@@ -16,7 +16,7 @@ class Productos extends Component {
 			<div style={styles.productos}>
 				{productos.map(producto =>
 					<Producto
-						agregarAlCarro={agregarAlCarro}
+						agregarAlCarro={() => agregarAlCarro(producto)}
 						key={producto.name}
 						producto={producto}
 					/>)}
