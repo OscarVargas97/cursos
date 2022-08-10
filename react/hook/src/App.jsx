@@ -1,22 +1,12 @@
-import { useRef } from "react";
+import { useState } from "react";
 
 const App = () => {
-	const ref = useRef()
-	const inputRef = useRef()
-	const click = () => {
-		console.log(ref.current.clientHeight)
-		ref.current.innerHTML = 'chanchito feliz'
-	}
-	const focus = () => {
-		inputRef.current.focus()
-	}
+	const { contador, setContador } = useState(0)
 	return (
 		<div>
-			<input ref={inputRef} />
-			<button onClick={focus}>Focus</button>
-			<div onClick={click} ref={ref}>lala</div>
+			Contador: {contador}
+			<button onClick={() => setContador(contador + 1)}>Incrementar</button>
 		</div>
-
 	)
 }
 export default App;
