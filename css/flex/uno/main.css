@@ -1,0 +1,22 @@
+html {
+	height: 100%;
+	font-size: 100px;
+}
+
+body {
+	background-color: #eee;
+	margin: 0;
+	height: 100%;
+}
+
+.flex {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	height: 200px;
+	align-content: space-evenly;
+}
+
+.red {
+	background-color: red;
+}
