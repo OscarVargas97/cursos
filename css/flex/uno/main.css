@@ -5,18 +5,29 @@ html {
 
 body {
 	background-color: #eee;
-	margin: 0;
-	height: 100%;
 }
 
 .flex {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-evenly;
 	height: 200px;
-	align-content: space-evenly;
 }
 
 .red {
 	background-color: red;
+}
+
+.primero {
+	order: 0;
+	flex-grow: 1;
+	flex-basis: 20px;
+}
+
+.segundo {
+	flex-grow: 1;
+}
+
+.tercero {
+	flex-grow: 2;
+	align-self: end;
 }
