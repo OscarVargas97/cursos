@@ -1,0 +1,23 @@
+const fn = (a, b, c) => console.log(a + b + c)
+
+const arr = [1, 2, 3]
+
+fn(arr[0], arr[1], arr[2])
+
+fn(...arr)
+
+
+const arr1 = [5, 6]
+
+const arr2 = [...arr, ...arr1]
+
+
+
+const obj1 = { a: 1, b: 2 }
+const obj2 = { b: 5, c: 'chanchito feliz' }
+
+const obj3 = { ...obj1 }
+
+obj1.a = 10
+
+console.log()
