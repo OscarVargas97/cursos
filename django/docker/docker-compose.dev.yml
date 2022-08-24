@@ -12,7 +12,7 @@ services:
       - ../server:/myapp/:z
     environment:
       DATABASE_NAME: ${DEV_DATABASE_NAME}
-    command: tail -F anything
+    restart: always
   database:
     container_name: database-dev-${PROJECT_NAME}
     environment:
@@ -20,7 +20,6 @@ services:
     restart: always
     volumes:
       - dev_data:/var/lib/postgresql/data
-
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4

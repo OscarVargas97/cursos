@@ -14,7 +14,8 @@ COPY ./server/. ./
 COPY ./server/requirements.txt ./
 RUN CPUCOUNT=1 pip3 wheel --wheel-dir=/tmp/wheels -r ./requirements.txt
 RUN pip install -r ./requirements.txt
-FROM base as production
-FROM base as development
 
-CMD ["python", "manage.py", "runserver"]
+FROM base as production
+
+FROM base as development
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

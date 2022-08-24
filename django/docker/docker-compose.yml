@@ -16,8 +16,8 @@ services:
     depends_on:
       - database
     ports:
-      - target: 3000
-        published: ${DD_PORT:-3000}
+      - target: 8000
+        published: ${DD_PORT:-8000}
         protocol: tcp
         mode: host
   database:
