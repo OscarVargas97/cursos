@@ -1,6 +1,9 @@
 #!/bin/bash
 source ./config.sh
 # Commands
+attachdjango(){
+	docker exec -it django-dev-repaso sh
+}
 pdownall(){
 	compose clear clear
 	pimageclearall

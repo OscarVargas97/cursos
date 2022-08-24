@@ -6,7 +6,7 @@
 
 # Ref: https://devguide.python.org/#branchstatus
 FROM python:3.9.13-slim-bullseye as base
-WORKDIR /app
+WORKDIR /myapp
 RUN apt-get -y update && \
 	apt-get -y install --no-install-recommends &&\
 	apt-get clean
@@ -18,5 +18,7 @@ RUN pip3 install \
 	--find-links=/tmp/wheels \
 	-r ./requirements.txt
 FROM base as production
-FROM base as development
 
+FROM base as development
+COPY ./server/. ./
+CMD ["python", "manage.py", "runserver"]

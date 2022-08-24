@@ -1,9 +1,9 @@
 #!/bin/bash
 #Seccion editar
-project_name=template
+project_name=repaso
 ##Docker images
 dockerfile=(django)
-download_image=(mysql phpmyadmin/phpmyadmin)
+download_image=(postgres:14.5-bullseye dpage/pgadmin4)
 
 
 #Preferentemente no editar, a menos que desees cambiar la posicion de archivos

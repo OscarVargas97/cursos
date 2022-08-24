@@ -7,26 +7,34 @@ services:
     image: django-dev-${PROJECT_NAME}
     container_name: django-dev-${PROJECT_NAME}
     depends_on:
-      - mysql
+      - database
+    volumes:
+      - ../server:/myapp/:z
     environment:
-      DD_DATABASE_NAME: ${DD_DEV_DATABASE_NAME}
-  mysql:
-    container_name: mysql-dev-${PROJECT_NAME}
+      DATABASE_NAME: ${DEV_DATABASE_NAME}
+    command: tail -F anything
+  database:
+    container_name: database-dev-${PROJECT_NAME}
     environment:
-      MYSQL_DATABASE: ${DD_DEV_DATABASE_NAME}
+      POSTGRES_DB: ${DEV_DATABASE_NAME}
     restart: always
     volumes:
-      - dev_data:/var/lib/mysql
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
-    depends_on:
-      - mysql
-    environment:
-      PMA_HOST: mysql
-      PMA_PORT: 3306
+      - dev_data:/var/lib/postgresql/data
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
     restart: always
+    depends_on:
+      - database
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
     ports:
-      - 8081:80
+      - "5050:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
 volumes:
   dev_data: {}
+  pgadmin-data: {}
