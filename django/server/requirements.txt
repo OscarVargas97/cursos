@@ -1,2 +1,4 @@
 # requirements.txt for DefectDojo using Python 3.x
 Django==4.1
+black==22.6.0
+pytest==5.0.4
