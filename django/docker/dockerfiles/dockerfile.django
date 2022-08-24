@@ -10,15 +10,11 @@ WORKDIR /myapp
 RUN apt-get -y update && \
 	apt-get -y install --no-install-recommends &&\
 	apt-get clean
+COPY ./server/. ./
 COPY ./server/requirements.txt ./
 RUN CPUCOUNT=1 pip3 wheel --wheel-dir=/tmp/wheels -r ./requirements.txt
-RUN pip3 install \
-	--no-cache-dir \
-	--no-index \
-	--find-links=/tmp/wheels \
-	-r ./requirements.txt
+RUN pip install -r ./requirements.txt
 FROM base as production
-
 FROM base as development
-COPY ./server/. ./
+
 CMD ["python", "manage.py", "runserver"]
