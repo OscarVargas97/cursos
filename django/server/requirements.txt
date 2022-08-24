@@ -1,0 +1,2 @@
+# requirements.txt for DefectDojo using Python 3.x
+Django==4.1

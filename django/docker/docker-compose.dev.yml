@@ -1,0 +1,32 @@
+---
+version: '3.8'
+services:
+  django:
+    build:
+      target: development
+    image: django-dev-${PROJECT_NAME}
+    container_name: django-dev-${PROJECT_NAME}
+    depends_on:
+      - mysql
+    environment:
+      DD_DATABASE_NAME: ${DD_DEV_DATABASE_NAME}
+  mysql:
+    container_name: mysql-dev-${PROJECT_NAME}
+    environment:
+      MYSQL_DATABASE: ${DD_DEV_DATABASE_NAME}
+    restart: always
+    volumes:
+      - dev_data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    depends_on:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    restart: always
+    ports:
+      - 8081:80
+volumes:
+  dev_data: {}
