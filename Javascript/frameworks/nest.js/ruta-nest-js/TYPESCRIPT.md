@@ -1,0 +1,43 @@
+# Ruta de Aprendizaje de Typescript [1 parte](https://www.youtube.com/watch?v=fUgxxhI_bvc&ab_channel=midulive)- [2 parte](https://www.youtube.com/watch?v=L1ZSk-vPVKI&t=13s&ab_channel=midulive)
+
+- [x] Inferencia de tipos
+- [x] TypeScript compilation
+- [x] Types in TypeScript
+- [x] Type inference concept 2
+- [x] Functions
+- [x] Typing functions 1
+- [x] Typing functions 2
+- [x] Typing function parameters
+- [x] Typing arrow functions
+- [x] never / void
+- [x] Objects
+- [x] Type Alias
+- [x] Optional properties
+- [x] Optional chaining operator
+- [x] Mutability
+- [x] Object freeze
+- [x] Template union types
+- [x] Union Types
+- [x] Intersection types
+- [x] Type indexing
+- [x] Type from value and typeof
+- [x] Type from function return
+- [x] Arrays
+- [x] Matrices and tuples
+- [x] Enums
+- [x] Magic Strings (JavaScript)
+- [x] Const or without Const
+- [x] Type Assertions
+- [x] Type Assertions .js & .ts
+- [x] Instanceof and Typeof
+- [x] Type Assertions Fetching
+- [x] Interfaces
+- [x] Declaring Functions in Interfaces
+- [x] Interfaces or Types
+- [x] Narrowing
+- [x] Type Guard
+- [x] Type Never
+- [x] Instanceof and Class
+- [x] private, public, protected properties
+- [x] Interfaces in Classes
+- [x] .d.ts Convention

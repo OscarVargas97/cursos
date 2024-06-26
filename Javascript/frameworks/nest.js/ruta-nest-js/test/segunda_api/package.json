@@ -1,0 +1,26 @@
+{
+  "name": "segunda_api",
+  "version": "1.0.0",
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "dev:mysql": "node --watch src/server-with-mysql.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.19.2",
+    "mongodb": "6.7.0",
+    "mysql2": "^3.10.0",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "standard": "^17.1.0"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
+}
